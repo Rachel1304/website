@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachel Bastié</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- fonts -->
+  <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;700;1,400;700&display=swap"
+    rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-red: hsl(353, 78%, 62%);
+      --color-darkblue: hsl(210, 84%, 25%);
+      --color-white: hsl(0, 0%, 100%);
+      --color-blue: hsl(202, 100%, 38%);
+      --color-black: hsl(60, 4%, 11%);
+    }
+
+    body {
+      font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white h-screen flex flex-col">
+  <div class="bg-black flex w-full flex-1 py-2 items-center justify-center">
+    <img src="/Ressources/LogoPrincipal.png" alt="Logotype Rachel Bastié" class="max-w-64 h-auto">
+  </div>
+  <div class="flex w-full flex-6 flex-col">
+    <div
+      class="absolute inset-0 pointer-events-none bg-[url('/Ressources/imageChatSansFond.png')] bg-center bg-cover bg-no-repeat opacity-[0.04]">
+    </div>
+    <div class="flex flex-4 flex-col gap-20 items-center justify-center">
+      <p class="flex flex-col items-center leading-2 text-lg"> <span style="font-family: 'Lora', serif;"
+          class="font-bold italic text-3xl">En maintenance</span><br>le temps de finir la nouvelle version.
+      </p>
+
+      <p class="flex justify-center flex-col items-center leading-6 text-lg">
+        Merci de votre patience. <br><span class="font-bold text-red"> Retour prochainement !</span>
+      </p>
+      <a href="/Ressources/PortfolioNumérique_BASTIE_Rachel.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-red text-white rounded-3xl border-2 border-red transition-all duration-300
+          hover:bg-[var(--color-white)] hover:text-[var(--color-red)] hover:border-[var(--color-red)]">
+        <svg class="w-5 h-5 transition-all duration-300" viewBox="0 0 116.85 146" fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M110.85,134h-43.84l28.54-58.15c2.46-6.07-3.86-11.97-9.74-9.11l-21.38,10.41V6c0-3.31-2.69-6-6-6s-6,2.69-6,6v71.18l-21.37-10.42c-5.89-2.87-12.21,3.04-9.75,9.11l28.53,58.13H6c-3.31,0-6,2.69-6,6s2.69,6,6,6h104.85c3.31,0,6-2.69,6-6s-2.69-6-6-6Z"
+            fill="currentColor" />
+        </svg>
+        PORTFOLIO
+      </a>
+
+    </div>
+    <div class="flex flex-col items-center md:items-end p-10 w-full md:flex-row gap-4">
+      <img src="/Ressources/TextePersonnelle.png" alt="Design Une forte folie de bien faire !"
+        class="sm:w-60 h-auto justify-start hidden md:block">
+      <p class="flex gap-4 font-semibold mx-auto items-center">
+        <a href="tel:+33642049542" class="text-sm text-gray-800 hover:text-[var(--color-red)] no-underline">
+          06.42.04.95.42
+        </a>
+        •
+        <a href="mailto:rachel.bastie@outlook.fr"
+          class="text-sm text-gray-800 hover:text-[var(--color-red)] no-underline">
+          rachel.bastie@outlook.fr
+        </a>
+      </p>
+      <div class="flex flex-row gap-4">
+        <a href="https://wa.me/33642049542" target="_blank">
+          <img src="/Ressources/LogoWhatsApp.png" alt="Contacte moi par WhatsApp"
+            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+        </a>
+        <a href="mailto:rachel.bastie@outlook.fr" target="_blank">
+          <img src="/Ressources/LogoOutlook.png" alt="Envoie moi un mail sur Outlook"
+            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+        </a>
+        <a href="https://www.linkedin.com/in/rachel-bastie/" target="_blank">
+          <img src="/Ressources/LogoLinkedin.png" alt="Retrouve moi sur Linkedin"
+            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+        </a>
+        <a href="https://www.instagram.com/rachel_bastie/" target="_blank">
+          <img src="/Ressources/LogoInstagram.png" alt="Retrouve moi sur Instagram"
+            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+        </a>
+        <a href="https://www.behance.net/rachelbastie" target="_blank">
+          <img src="/Ressources/LogoBehance.png" alt="Regarde mon Behance"
+            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
