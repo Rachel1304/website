@@ -1,0 +1,45 @@
+---
+// src/components/ProjectCard.astro
+const { title, categories, mainImg, sideImgTop, sideImgBottom, bgColor = "#1a1a1a" } = Astro.props;
+---
+
+<section class="project-container sticky top-[15vh] w-full min-h-[80vh] rounded-[40px] p-12 mb-[10vh] flex flex-col gap-8 shadow-2xl transition-all duration-500" 
+         style={`background-color: ${bgColor};`}>
+  
+  <div class="flex justify-between items-end border-b border-white/10 pb-6">
+    <div class="flex flex-col gap-4">
+      <h2 class="text-6xl font-bold italic lora text-white">{title}</h2>
+      
+      <ul class="flex gap-3">
+        {categories.map((cat) => (
+          <li class="px-4 py-1 rounded-full border border-white/20 text-white/70 text-sm uppercase tracking-widest font-light">
+            {cat}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <a href="#" class="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-all">
+      SEE
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6 flex-grow h-[50vh]">
+    <div class="overflow-hidden rounded-2xl bg-black/20">
+      <img src={mainImg} class="w-full h-full object-cover" alt="Main project view" />
+    </div>
+
+    <div class="grid grid-rows-2 gap-6 h-full">
+      <div class="overflow-hidden rounded-2xl bg-black/20">
+        <img src={sideImgTop} class="w-full h-full object-cover" alt="Detail 1" />
+      </div>
+      <div class="overflow-hidden rounded-2xl bg-black/20">
+        <img src={sideImgBottom} class="w-full h-full object-cover" alt="Detail 2" />
+      </div>
+    </div>
+  </div>
+</section>

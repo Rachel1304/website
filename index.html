@@ -12,85 +12,185 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;700;1,400;700&display=swap"
     rel="stylesheet">
 
+  import CardProjet from './CardProjet.astro';
+
+
   <style type="text/tailwindcss">
     @theme {
       --color-red: hsl(353, 78%, 62%);
-      --color-darkblue: hsl(210, 84%, 25%);
-      --color-white: hsl(0, 0%, 100%);
-      --color-blue: hsl(202, 100%, 38%);
-      --color-black: hsl(60, 4%, 11%);
+      --color-darkblue: hsl(212.6, 63.6%, 10.8%);
+      --color-white: hsl(354, 100%, 98%);
+      --color-blue: hsl(210, 100%, 80%);
+      --color-black: hsl(0, 0%, 8.6%);
     }
 
     body {
       font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
     }
+     html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 
-<body class="bg-white h-screen flex flex-col">
-  <div class="bg-black flex w-full flex-1 py-2 items-center justify-center">
-    <img src="/Ressources/LogoPrincipal.png" alt="Logotype Rachel Bastié" class="max-w-64 h-auto">
+<body class="bg-white flex flex-col">
+  <div id="header"
+    class="fixed top-0 left-0 right-0 bg-darkblue flex w-full h-15 items-center justify-between px-10 z-40">
+    <img src="/Ressources/LogoSecondaire.svg" alt="Logotype Rachel Bastié" class="max-w-28 h-auto">
+    <button id="menuBtn" class="flex flex-col items-center gap-2 p-3 hover:opacity-80 transition-opacity duration-300">
+      <span class="w-8 h-0.5 bg-white block"></span>
+      <span class="w-8 h-0.5 bg-white block"></span>
+    </button>
   </div>
-  <div class="flex w-full flex-6 flex-col">
-    <div
-      class="absolute inset-0 pointer-events-none bg-[url('/Ressources/imageChatSansFond.png')] bg-center bg-cover bg-no-repeat opacity-[0.04]">
-    </div>
-    <div class="flex flex-4 flex-col gap-20 items-center justify-center">
-      <p class="flex flex-col items-center leading-2 text-lg"> <span style="font-family: 'Lora', serif;"
-          class="font-bold italic text-3xl">En maintenance</span><br>le temps de finir la nouvelle version.
-      </p>
 
-      <p class="flex justify-center flex-col items-center leading-6 text-lg">
-        Merci de votre patience. <br><span class="font-bold text-red"> Retour prochainement !</span>
-      </p>
-      <a href="/Ressources/PortfolioNumérique_BASTIE_Rachel.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-red text-white rounded-3xl border-2 border-red transition-all duration-300
-          hover:bg-[var(--color-white)] hover:text-[var(--color-red)] hover:border-[var(--color-red)]">
-        <svg class="w-5 h-5 transition-all duration-300" viewBox="0 0 116.85 146" fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M110.85,134h-43.84l28.54-58.15c2.46-6.07-3.86-11.97-9.74-9.11l-21.38,10.41V6c0-3.31-2.69-6-6-6s-6,2.69-6,6v71.18l-21.37-10.42c-5.89-2.87-12.21,3.04-9.75,9.11l28.53,58.13H6c-3.31,0-6,2.69-6,6s2.69,6,6,6h104.85c3.31,0,6-2.69,6-6s-2.69-6-6-6Z"
-            fill="currentColor" />
-        </svg>
-        PORTFOLIO
-      </a>
+  <div class="absolute bottom-0 right-0 pointer-events-none z-0 w-55 h-96 translate-y-1/4">
+    <img src="/Ressources/deco-fond.svg" alt="" class="w-full h-full object-contain">
+  </div>
 
-    </div>
-    <div class="flex flex-col items-center md:items-end p-10 w-full md:flex-row gap-4">
-      <img src="/Ressources/TextePersonnelle.png" alt="Design Une forte folie de bien faire !"
-        class="sm:w-60 h-auto justify-start hidden md:block">
-      <p class="flex gap-4 font-semibold mx-auto items-center">
-        <a href="tel:+33642049542" class="text-sm text-gray-800 hover:text-[var(--color-red)] no-underline">
-          06.42.04.95.42
-        </a>
-        •
-        <a href="mailto:rachel.bastie@outlook.fr"
-          class="text-sm text-gray-800 hover:text-[var(--color-red)] no-underline">
-          rachel.bastie@outlook.fr
-        </a>
-      </p>
-      <div class="flex flex-row gap-4">
-        <a href="https://wa.me/33642049542" target="_blank">
-          <img src="/Ressources/LogoWhatsApp.png" alt="Contacte moi par WhatsApp"
-            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
-        </a>
-        <a href="mailto:rachel.bastie@outlook.fr" target="_blank">
-          <img src="/Ressources/LogoOutlook.png" alt="Envoie moi un mail sur Outlook"
-            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
-        </a>
-        <a href="https://www.linkedin.com/in/rachel-bastie/" target="_blank">
-          <img src="/Ressources/LogoLinkedin.png" alt="Retrouve moi sur Linkedin"
-            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
-        </a>
-        <a href="https://www.instagram.com/rachel_bastie/" target="_blank">
-          <img src="/Ressources/LogoInstagram.png" alt="Retrouve moi sur Instagram"
-            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
-        </a>
-        <a href="https://www.behance.net/rachelbastie" target="_blank">
-          <img src="/Ressources/LogoBehance.png" alt="Regarde mon Behance"
-            class="w-6 h-6 transition-transform duration-300 hover:scale-120">
-        </a>
+
+
+  <div
+    class="flex flex-col justify-center relative overflow-visible min-h-[100vh] mt-15 gap-30 items-center z-10 mt-20">
+    <div id="sticky-header"
+      class="flex flex-col items-center sticky top-15 z-50 transition-all duration-300 w-full h-60 bg-gradient-to-b from-white/100 to-transparent pointer-events-none">
+      <div class="w-full p-10 flex flex-col items-center">
+        <p class="flex flex-col items-center text-base font-light">
+          Web & Print
+          <span style="font-family: 'Lora', serif;"
+            class="font-bold italic text-5xl transition-transform duration-500 origin-center" id="title-scale">
+            Graphiste
+          </span>
+        </p>
       </div>
     </div>
+    <p class="text-xl text-center" style="font-family: 'Lora', 'serif';">
+      « <strong>J'aime</strong> tester,<br>
+      essayer et fabriquer. »
+    </p>
   </div>
 
+  <script>
+    const stickyHeader = document.getElementById('sticky-header')
+    window.addEventListener('scroll', () => {
+      console.log(window.scrollY)
+      if (stickyHeader.offsetTop >= 656) {
+        stickyHeader.style.position = "fixed"
+      }
+    })
+  </script>
+
+
+  <script>
+    const title = document.getElementById('title-scale')
+
+    window.addEventListener('scroll', () => {
+      const scrollValue = window.scrollY
+      // La réduction commence après 50px de scroll
+      // On réduit jusqu'à 0.7 (70% de la taille initiale)
+      const scale = Math.max(0.8, 1 - scrollValue / 800)
+
+      if (title) {
+        title.style.transform = `scale(${scale})`
+      }
+    })
+  </script>
+
+
+  <div class="max-w-7xl mx-auto px-6 py-20">
+    <ProjectCard title="Projet 1" categories={['Branding', 'Web Design' , '2024' ]} bgColor="#1E293B"
+      mainImg="/img/oak-main.jpg" sideImgTop="/img/oak-detail-1.jpg" sideImgBottom="/img/oak-detail-2.jpg" />
+
+    <ProjectCard title="NOMA Concept" categories={['Editorial', 'Print' ]} bgColor="#451A03"
+      mainImg="/img/noma-main.jpg" sideImgTop="/img/noma-1.jpg" sideImgBottom="/img/noma-2.jpg" />
+  </div>
+
+  <!-- <section class="projects-container relative w-full mb-0">
+
+    <div class="project-card sticky top-[20vh] z-10 w-full h-[60vh] bg-stone-100 shadow-2xl  border-b border-gray-200">
+      <img src="/Ressources/imageChat.png" alt="Projet 1" class="w-full h-full object-cover">
+      <div class="absolute top-0 left-0 z-20 p-10 bg-white/60 backdrop-blur-sm rounded-br-3xl">
+        <h3 style="font-family: 'Lora', 'serif', 'italic';" class="text-3xl font-bold">Spécimen Cathare</h3>
+        <p class="font-light italic">Branding & Motion</p>
+      </div>
+
+    </div>
+
+    <div class="project-card sticky top-[20vh] z-20 w-full h-[60vh] bg-white shadow-2xl border-b border-gray-200">
+      <div class="absolute top-0 left-0 z-20 p-10 bg-white/60 backdrop-blur-sm rounded-br-3xl">
+        <h3 class="text-3xl font-bold">Nom du Projet 02</h3>
+        <p class="font-light italic">Web Design</p>
+      </div>
+      <img src="/api/placeholder/1920/1080" alt="Projet 2" class="w-full h-full object-cover">
+    </div>
+
+    <div class="project-card sticky top-[20vh] z-30 w-full h-[60vh] bg-stone-50 shadow-2xl border-b border-gray-200">
+      <div class="absolute top-0 left-0 z-20 p-10 bg-white/60 backdrop-blur-sm rounded-br-3xl">
+        <h3 class="text-3xl font-bold">Nom du Projet 03</h3>
+        <p class="font-light italic">Packaging</p>
+      </div>
+      <img src="/api/placeholder/1920/1080" alt="Projet 3" class="w-full h-full object-cover">
+    </div>
+
+  </section> -->
+
+  <footer class="relative z-40 w-full min-h-[50vh] bg-darkblue text-white p-10">
+    <div class="flex flex-col items-center justify-center gap-10">
+      <h2 class="text-5xl font-bold italic" style="font-family: 'Lora';">Travaillons ensemble</h2>
+    </div>
+  </footer>
+
+
+  <div class="fixed bottom-10 right-10 z-50 flex flex-col items-center gap-4">
+    <div class="flex justify-center gap-4">
+      <a href="/Ressources/PortfolioNumérique_BASTIE_Rachel.pdf" target="_blank"
+        class="inline-flex items-center justify-center gap-2 px-4 font-[500] text-white rounded-3xl bg-red w-30 h-12 transition-all duration-300 ring-2 ring-white hover:bg-[var(--color-white)] hover:text-[var(--color-red)] hover:ring-[var(--color-red)]">
+        Portfolio
+      </a>
+      <a href="/contact"
+        class="inline-flex items-center justify-center gap-2 px-4 font-[500] text-[var(--color-darkblue)] bg-white rounded-3xl w-30 h-12 transition-all duration-300 ring-2 ring-[var(--color-darkblue)] hover:bg-[var(--color-darkblue)] hover:text-[var(--color-white)] hover:ring-[var(--color-white)]">
+        Contact
+      </a>
+      <a href="#header" aria-label="Remonter en haut"
+        class="w-12 h-12 rounded-full flex items-center justify-center bg-[var(--color-red)] text-white transition-transform duration-200 hover:scale-105 ring-2 ring-white hover:ring-[var(--color-red)]">
+        <img src="/Ressources/arrow-white.svg" alt="Haut" class="w-6 h-6">
+      </a>
+    </div>
+  </div>
+
+
+
+
 </body>
+<!-- 
+    <p class="flex gap-4 font-semibold mx-auto items-center">
+      <a href="tel:+33642049542" class="text-sm text-gray-800 hover:text-[var(--color-red)] no-underline">
+        06.42.04.95.42
+      </a>
+      •
+      <a href="mailto:rachel.bastie@outlook.fr"
+        class="text-sm text-gray-800 hover:text-[var(--color-red)] no-underline">
+        rachel.bastie@outlook.fr
+      </a>
+    </p> -->
+<!-- <div class="flex flex-row gap-4">
+      <a href="https://wa.me/33642049542" target="_blank">
+        <img src="/Ressources/LogoWhatsApp.png" alt="Contacte moi par WhatsApp"
+          class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+      </a>
+      <a href="mailto:rachel.bastie@outlook.fr" target="_blank">
+        <img src="/Ressources/LogoOutlook.png" alt="Envoie moi un mail sur Outlook"
+          class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+      </a>
+      <a href="https://www.linkedin.com/in/rachel-bastie/" target="_blank">
+        <img src="/Ressources/LogoLinkedin.png" alt="Retrouve moi sur Linkedin"
+          class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+      </a>
+      <a href="https://www.instagram.com/rachel_bastie/" target="_blank">
+        <img src="/Ressources/LogoInstagram.png" alt="Retrouve moi sur Instagram"
+          class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+      </a>
+      <a href="https://www.behance.net/rachelbastie" target="_blank">
+        <img src="/Ressources/LogoBehance.png" alt="Regarde mon Behance"
+          class="w-6 h-6 transition-transform duration-300 hover:scale-120">
+      </a>
+    </div> -->
